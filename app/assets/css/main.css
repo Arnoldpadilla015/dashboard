@@ -16,3 +16,21 @@
   --color-green-900: #0A5331;
   --color-green-950: #052E16;
 }
+
+:root {
+  --ui-bg: #ffffff;
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-muted: #f8fafc;
+  --ui-bg-accented: #f1f5f9;
+  --ui-border: #e5e7eb;
+  --ui-text: #111827;
+  --ui-text-muted: #6b7280;
+  --ui-text-dimmed: #94a3b8;
+  --ui-text-highlighted: #0f172a;
+}
+
+html,
+body,
+#__nuxt {
+  background: #ffffff;
+}

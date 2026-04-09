@@ -5,7 +5,6 @@ defineProps<{
   collapsed?: boolean
 }>()
 
-const colorMode = useColorMode()
 const appConfig = useAppConfig()
 
 const colors = ['red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose']
@@ -79,31 +78,8 @@ const items = computed<DropdownMenuItem[][]>(() => ([[{
   }]
 }, {
   label: 'Appearance',
-  icon: 'i-lucide-sun-moon',
-  children: [{
-    label: 'Light',
-    icon: 'i-lucide-sun',
-    type: 'checkbox',
-    checked: colorMode.value === 'light',
-    onSelect(e: Event) {
-      e.preventDefault()
-
-      colorMode.preference = 'light'
-    }
-  }, {
-    label: 'Dark',
-    icon: 'i-lucide-moon',
-    type: 'checkbox',
-    checked: colorMode.value === 'dark',
-    onUpdateChecked(checked: boolean) {
-      if (checked) {
-        colorMode.preference = 'dark'
-      }
-    },
-    onSelect(e: Event) {
-      e.preventDefault()
-    }
-  }]
+  icon: 'i-lucide-sun',
+  disabled: true
 }], [{
   label: 'Templates',
   icon: 'i-lucide-layout-template',

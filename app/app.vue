@@ -1,7 +1,11 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
-const color = computed(() => colorMode.value === 'dark' ? '#1b1718' : 'white')
+if (import.meta.client && colorMode.preference !== 'light') {
+  colorMode.preference = 'light'
+}
+
+const color = computed(() => 'white')
 
 useHead({
   meta: [
@@ -13,7 +17,8 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'en',
+    class: 'light'
   }
 })
 
